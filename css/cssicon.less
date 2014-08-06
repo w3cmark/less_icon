@@ -1,0 +1,1039 @@
+/*
+带参数（或者空参数）的混合，编译后不会暴露在css文件中
+.fl(){float:left;}
+*/
+
+/*icon-home*/
+/*
+b-width 12
+top1 0
+left1 0
+
+width2=height2 = 4
+b-width2 = 5
+top2 = 12*2
+left2 (24-4-5*2)/2 = 5
+*/
+.classWeilei(){
+	content:"";
+	position:absolute;
+}
+.classReset(){
+	position:relative;
+	height:90px;
+}
+.transformRotate(@deg){
+	-webkit-transform:rotate(@deg);
+    -moz-transform:rotate(@deg);
+    -ms-transform:rotate(@deg);
+    -o-transform:rotate(@deg);
+    transform:rotate(@deg);
+}
+
+
+.iconHomea(@width:12px;@color:#ffa900;@bgcolor:#fff;@top:0;@left:0){
+	.classReset;
+	&::before{
+		.classWeilei;
+		width:@width*4/5;
+		height:@width*4/5;
+		border-top:@width/20 solid @color;
+		border-right:@width/20 solid @color;
+		top:@top;
+		left:@left + 0.5;
+		.transformRotate(-45deg);
+	}
+	&::after{
+		.classWeilei;
+		width:@width*4/5;
+		height:@width*3/5;
+		border:@width/20 solid @color;
+		border-top:none;
+		top:@top + @width*2/5;
+		left:@left;
+	}
+	em{
+		position: absolute;
+		width:@width/4;
+		height:@width/4;
+		border:@width/20 solid @color;
+		border-bottom:0;
+		left:@left + @width*8/20 - @width/8;
+		top:@top + @width*3/4;
+		background:@bgcolor;
+		z-index:3;
+	}
+}
+
+.iconHomeb(@width:12px;@color:#ffa900;@top:0;@left:0){
+	.classReset;
+	&::before{
+		.classWeilei;
+		width:0;
+		height:0;
+		border-width:@width;
+		overflow:hidden;
+		border-color:transparent transparent @color;
+		border-style:solid;
+		top:@top;
+		left:@left;
+	}
+	&::after{
+		.classWeilei;
+		width:@width*2/5;
+		height:@width*2/5;
+		border: @width*2/5 solid @color;
+		border-bottom:none;
+		top:@top+@width*2;
+		left:@left+@width*2/5;
+	}
+}
+
+.iconDown(@width:20px;@color:#ffa900;@top:0;@left:0){
+	.classReset;
+	&::before{
+		.classWeilei;
+		overflow:hidden;
+		width:@width/10;
+		height:@width - (@width/10)*4;
+		background: @color;
+		left:@left + @width/2 + @width/20;
+		top:@top + (@width/10)*4 - @width/10;
+	}
+	&::after{
+		.classWeilei;
+		width:@width - (@width/10)*6;
+		height:@width - (@width/10)*6;
+		border:@width/10 solid @color;
+		border-left: 0;
+		border-bottom: 0;
+		.transformRotate(135deg);
+		left:@left + @width/4 + @width/10;
+		top:@top + @width/4 + @width/10;
+	}
+	em{
+		position: absolute;
+		width:@width;
+		height:@width;
+		border:@width/10 solid @color;
+		border-radius:@width;
+		left:@left;
+		top:@top;
+	}
+}
+
+.iconClosea(@width:20px;@color1:#ffa900;@color2:#fff;@top:0;@left:0){
+	.classReset;
+	&::before{
+		.classWeilei;
+		overflow:hidden;
+		width:(@width/10)*6;
+		height:(@width/10)*6;
+		border-top:@width/10 solid @color2;
+		left:@left + @width/4 - (@width/20)*5;
+		top:@top + @width/2 - @width/10;
+		z-index:2;
+		.transformRotate(45deg);
+	}
+	&::after{
+		.classWeilei;
+		width:(@width/10)*6;
+		height:(@width/10)*6;
+		border-top:@width/10 solid @color2;
+		.transformRotate(-45deg);
+		left:@left + @width/2 - (@width/20)*2;
+		top:@top + @width/2 - @width/10;
+	}
+	em{
+		position: absolute;
+		width:@width;
+		height:@width;
+		border-radius:@width;
+		left:@left;
+		top:@top;
+		background:@color1;
+	}
+}
+
+.iconCloseb(@width:20px;@color2:#f60;@top:0;@left:0){
+	.classReset;
+	&::before{
+		.classWeilei;
+		overflow:hidden;
+		width:(@width/10)*6;
+		height:(@width/10)*6;
+		border-top:@width/10 solid @color2;
+		left:@left + @width/4 - (@width/20)*5;
+		top:@top + @width/2 - @width/10;
+		z-index:2;
+		.transformRotate(45deg);
+	}
+	&::after{
+		.classWeilei;
+		width:(@width/10)*6;
+		height:(@width/10)*6;
+		border-top:@width/10 solid @color2;
+		.transformRotate(-45deg);
+		left:@left + @width/2 - (@width/20)*2;
+		top:@top + @width/2 - @width/10;
+	}
+}
+
+.iconGotop(@width:20px;@color1:#fff;@color2:#000;@top:0;@left:0){
+	.classReset;
+	&::before{
+		.classWeilei;
+		width:0;
+		height:0;
+		border-width:@width/4 @width/3;
+		overflow:hidden;
+		border-color:transparent transparent @color1;
+		border-style:solid;
+		top:@top + @width/20;
+		left:@left + @width/2 - @width/3;
+		z-index:3;
+	}
+	&::after{
+		.classWeilei;
+		width:@width/5;
+		height:@width/2 - @width/6;
+		top:@top + @width/10 + @width*2/5;
+		left:@left + @width/2 - @width/10;
+		z-index:3;
+		background:@color1;
+	}
+	em{
+		position: absolute;
+		width:@width;
+		height:@width;
+		border-radius:@width;
+		left:@left;
+		top:@top;
+		background:@color2;
+		border-radius:@width/5;
+		z-index:2;
+		&::before{
+			.classWeilei;
+			z-index:3;
+			border-top:@width/20 solid @color1;
+			top:@width*2/10;
+			width:@width*2/3;
+			height:0;
+			left:@width/6;
+		}
+	}
+}
+
+
+.iconSearch(@width:12px;@color:#ffa900;@top:0;@left:0){
+	.classReset;
+	&::before{
+		.classWeilei;
+		width:@width;
+		height:@width;
+		border:@width/8 solid @color;
+		top:@top;
+		left:@left;
+		border-radius:@width;
+	}
+	&::after{
+		.classWeilei;
+		width:@width*3/4;
+		height:@width/8;
+		top:@top + @width;
+		left:@left+ @width + @width/30;
+		background:@color;
+		.transformRotate(30deg);
+	}
+}
+
+.iconPlay(@width:12px;@color1:#ffa900;@color2:#fff;@top:0;@left:0){
+	.classReset;
+	&::before{
+		.classWeilei;
+		width:@width;
+		height:@width;
+		top:@top;
+		left:@left;
+		border-radius:@width;
+		background:@color1;
+	}
+	&::after{
+		.classWeilei;
+		width:0;
+		height:0;
+		top:@top + @width/2 - @width/3;
+		left:@left+ @width/2 - @width/8;
+		border-style:solid;
+		border-width:@width/3;
+		border-color:transparent transparent transparent @color2;
+		z-index:2
+	}
+}
+
+.iconStop(@width:12px;@color1:#ffa900;@color2:#fff;@top:0;@left:0){
+	.classReset;
+	&::before{
+		.classWeilei;
+		width:@width/10;
+		height:@width/2;
+		top:@top +  @width/2 - @width/4;
+		left:@left + @width/2 - @width/20 + @width/6;
+		background:@color2;
+		z-index:3;
+	}
+	&::after{
+		.classWeilei;
+		width:@width/10;
+		height:@width/2;
+		top:@top +  @width/2 - @width/4;
+		left:@left + @width/2 - @width/20 - @width/6;
+		background:@color2;z-index:3;
+	}
+	em{
+		width:@width;
+		height:@width;
+		position: absolute;
+		top:@top;
+		left:@left;
+		border-radius:@width;
+		background:@color1;
+	}
+}
+
+.iconNext(@width:12px;@color1:#ffa900;@color2:#fff;@top:0;@left:0){
+	.classReset;
+	&::before{
+		.classWeilei;
+		width:@width/10;
+		height:@width/2;
+		top:@top +  @width/2 - @width/4;
+		left:@left + @width/2 - @width/20 + @width/5;
+		background:@color2;z-index:3;
+	}
+	&::after{
+		.classWeilei;
+		width:0;
+		height:0;
+		top:@top + @width/2 - @width/3;
+		left:@left+ @width/2 - @width/4;
+		border-style:solid;border-width:@width/3;
+		border-color:transparent transparent transparent @color2;
+		z-index:2;
+	}
+	em{
+		width:@width;
+		height:@width;
+		position: absolute;
+		top:@top;
+		left:@left;
+		border-radius:@width;
+		background:@color1;
+	}
+}
+
+.iconPrev(@width:12px;@color1:#ffa900;@color2:#fff;@top:0;@left:0){
+	.classReset;
+	&::before{
+		.classWeilei;
+		width:@width/10;
+		height:@width/2;
+		top:@top +  @width/2 - @width/4;
+		left:@left + @width/2 - @width/20 - @width/5;
+		background:@color2;z-index:3;
+	}
+	&::after{
+		.classWeilei;
+		width:0;
+		height:0;
+		top:@top + @width/2 - @width/3;
+		left:@left+ @width/2 - @width*3/8;
+		border-style:solid;border-width:@width/3;
+		border-color:transparent @color2 transparent transparent;
+		z-index:2;
+	}
+	em{
+		width:@width;
+		height:@width;
+		position: absolute;
+		top:@top;
+		left:@left;
+		border-radius:@width;
+		background:@color1;
+	}
+}
+
+.iconEmail(@width:12px;@color:#ffa900;@top:0;@left:0){
+	.classReset;
+	&::before{
+		.classWeilei;
+		width:@width;
+		height:@width*2/3;
+		top:@top;
+		left:@left;
+		z-index:3;
+		border:@width/12 solid @color;
+		border-radius:@width/10;
+	}
+	&::after{
+		.classWeilei;
+		width:@width*2/3;
+		height:@width*2/3;
+		top:@top - @width/4;
+		left:@left +  @width/5;
+		border-right:@width/12 solid @color;
+		border-bottom:@width/12 solid @color;
+		.transformRotate(45deg);
+	}
+}
+
+.iconLove(@width:12px;@color:#ffa900;@top:0;@left:0){
+	.classReset;
+	&::before{
+		.classWeilei;
+		top:@top;
+		left:@left;
+		width:@width;
+	    height:@width*5/9;
+	    background:@color;
+	    border-radius:@width*4/9 0 0 @width*4/9;
+	    .transformRotate(45deg);
+	}
+	&::after{
+		.classWeilei;
+		left:@left + @width/3;
+		top:@top;
+		width:@width;
+	    height:@width*5/9;
+	    background:@color;
+	    border-radius:@width*4/9 0 0 @width*4/9;
+	    .transformRotate(135deg);
+	}
+}
+
+.iconAdda(@width:12px;@color1:#ffa900;@color2:#fff;@top:0;@left:0){
+	.classReset;
+	&::before{
+		.classWeilei;
+		width:@width/10;
+		height:@width/2;
+		top:@top +  @width/2 - @width/4;
+		left:@left + @width/2 - @width/20;
+		background:@color2;
+		z-index:3;
+	}
+	&::after{
+		.classWeilei;
+		width:@width/10;
+		height:@width/2;
+		top:@top +  @width/2 - @width/4;
+		left:@left + @width/2 - @width/20;
+		background:@color2;
+		z-index:3;
+		.transformRotate(90deg);
+	}
+	em{
+		width:@width;
+		height:@width;
+		position: absolute;
+		top:@top;
+		left:@left;
+		border-radius:@width;
+		background:@color1;
+	}
+}
+
+.iconAddb(@width:12px;@color2:#f60;@top:0;@left:0){
+	.classReset;
+	&::before{
+		.classWeilei;
+		width:@width/10;
+		height:@width/2;
+		top:@top +  @width/2 - @width/4;
+		left:@left + @width/2 - @width/20;
+		background:@color2;
+		z-index:3;
+	}
+	&::after{
+		.classWeilei;
+		width:@width/10;
+		height:@width/2;
+		top:@top +  @width/2 - @width/4;
+		left:@left + @width/2 - @width/20;
+		background:@color2;
+		z-index:3;
+		.transformRotate(90deg);
+	}
+}
+
+.iconRemovea(@width:12px;@color1:#ffa900;@color2:#fff;@top:0;@left:0){
+	.classReset;
+	&::before{
+		.classWeilei;
+		width:@width/2;
+		height:@width/10;
+		top:@top +  @width/2 - @width/20;
+		left:@left + @width/2 - @width/4;
+		background:@color2;
+		z-index:3;
+	}
+	&::after{
+		.classWeilei;
+		width:@width;
+		height:@width;
+		top:@top;
+		left:@left;
+		border-radius:@width;
+		background:@color1;
+	}
+}
+
+.iconRemoveb(@width:12px;@color2:#f60;@top:0;@left:0){
+	.classReset;
+	&::before{
+		.classWeilei;
+		width:@width/2;
+		height:@width/10;
+		top:@top +  @width/2 - @width/20;
+		left:@left + @width/2 - @width/4;
+		background:@color2;
+		z-index:3;
+	}
+}
+
+.iconForwarda(@width:12px;@color1:#f60;@color2:#fff;@top:0;@left:0){
+	.classReset;
+	&::before {
+		.classWeilei;
+		top:@top + @width/4;
+	    left:@left + @width*3/5;
+	    border-width:@width/4;
+	    border-style:solid;
+	    border-color:transparent transparent transparent @color2;
+	    z-index:2;
+	}
+    &::after {
+    	.classWeilei;
+		top:@top +  @width*2/5;
+	    left:@left + @width/5;
+	    width:@width*2/5;
+	    height:@width/5;
+	    z-index:2;
+	    background:@color2;
+	}
+	em{
+		width:@width;
+		height:@width;
+		position: absolute;
+		top:@top;
+		left:@left;
+		border-radius:@width;
+		background:@color1;
+	}
+}
+
+.iconForwardb(@width:12px;@color1:#f60;@top:0;@left:0){
+	.classReset;
+	&::before {
+		.classWeilei;
+		top:@top + @width/4;
+	    left:@left + @width*3/5;
+	    border-width:@width/4;
+	    border-style:solid;
+	    border-color:transparent transparent transparent @color1;
+	    z-index:2;
+	}
+    &::after {
+    	.classWeilei;
+		top:@top +  @width*2/5;
+	    left:@left + @width/5;
+	    width:@width*2/5;
+	    height:@width/5;
+	    z-index:2;
+	    background:@color1;
+	}
+}
+
+.iconBacka(@width:12px;@color1:#f60;@color2:#fff;@top:0;@left:0){
+	.classReset;
+	&::before {
+		.classWeilei;
+		top:@top +  @width/4;
+	    left:@left - @width/16;
+	    border-width:@width/4;
+	    border-style:solid;
+	    border-color:transparent @color2 transparent transparent;
+	    z-index:2;
+	}
+    &::after {
+    	.classWeilei;
+		top:@top +  @width*2/5;
+	    left:@left + @width*3/8;
+	    width:@width*2/5;
+	    height:@width/5;
+	    z-index:2;
+	    background:@color2;
+	}
+	em{
+		width:@width;
+		height:@width;
+		position: absolute;
+		top:@top;
+		left:@left;
+		border-radius:@width;
+		background:@color1;
+	}
+}
+
+.iconBackb(@width:12px;@color1:#f60;@top:0;@left:0){
+	.classReset;
+	&::before {
+		.classWeilei;
+		top:@top + @width/4;
+	    left:@left - @width/16;
+	    border-width:@width/4;
+	    border-style:solid;
+	    border-color:transparent @color1 transparent transparent;
+	    z-index:2;
+	}
+    &::after {
+    	.classWeilei;
+		top:@top +  @width*2/5;
+	    left:@left + @width*3/8;
+	    width:@width*2/5;
+	    height:@width/5;
+	    z-index:2;
+	    background:@color1;
+	}
+}
+
+.iconUpa(@width:12px;@color1:#f60;@color2:#fff;@top:0;@left:0){
+	.classReset;
+	&::before {
+		.classWeilei;
+		top:@top - @width/16;
+	    left:@left + @width/4 ;
+	    border-width:@width/4;
+	    border-style:solid;
+	    border-color:transparent transparent @color2 transparent;
+	    z-index:2;
+	}
+    &::after {
+    	.classWeilei;
+		top:@top +  @width*2/5;
+	    left:@left + @width*2/5;
+	    width:@width/5;
+	    height:@width*2/5;
+	    z-index:2;
+	    background:@color2;
+	}
+	em{
+		width:@width;
+		height:@width;
+		position: absolute;
+		top:@top;
+		left:@left;
+		border-radius:@width;
+		background:@color1;
+	}
+}
+
+.iconUpb(@width:12px;@color1:#f60;@top:0;@left:0){
+	.classReset;
+	&::before {
+		.classWeilei;
+		top:@top - @width/16;
+	    left:@left + @width/4 ;
+	    border-width:@width/4;
+	    border-style:solid;
+	    border-color:transparent transparent @color1 transparent;
+	    z-index:2;
+	}
+    &::after {
+    	.classWeilei;
+		top:@top +  @width*2/5;
+	    left:@left + @width*2/5;
+	    width:@width/5;
+	    height:@width*2/5;
+	    z-index:2;
+	    background:@color1;
+	}
+}
+
+.iconDowna(@width:12px;@color1:#f60;@color2:#fff;@top:0;@left:0){
+	.classReset;
+	&::before {
+		.classWeilei;
+		top:@top + @width*3/5;
+	    left:@left + @width/4 ;
+	    border-width:@width/4;
+	    border-style:solid;
+	    border-color:@color2 transparent transparent transparent;
+	    z-index:2;
+	}
+    &::after {
+    	.classWeilei;
+		top:@top + @width/5;
+	    left:@left + @width*2/5;
+	    width:@width/5;
+	    height:@width*2/5;
+	    z-index:2;
+	    background:@color2;
+	}
+	em{
+		width:@width;
+		height:@width;
+		position: absolute;
+		top:@top;
+		left:@left;
+		border-radius:@width;
+		background:@color1;
+	}
+}
+
+.iconDownb(@width:12px;@color1:#f60;@top:0;@left:0){
+	.classReset;
+	&::before {
+		.classWeilei;
+		top:@top + @width*3/5;
+	    left:@left + @width/4 ;
+	    border-width:@width/4;
+	    border-style:solid;
+	    border-color:@color1 transparent transparent transparent;
+	    z-index:2;
+	}
+    &::after {
+    	.classWeilei;
+		top:@top + @width/5;
+	    left:@left + @width*2/5;
+	    width:@width/5;
+	    height:@width*2/5;
+	    z-index:2;
+	    background:@color1;
+	}
+}
+
+.iconLuyina(@width:12px;@color1:#f60;@color2:#fff;@top:0;@left:0){
+	.classReset;
+	&::before {
+		.classWeilei;
+		top:@top + @width*1/20;
+	    left:@left + @width*4/15 ;
+	    z-index:2;
+	    width:@width*3/10;
+		height:@width*3/5;
+		border-radius:@width*2/5;
+		border:@width/10 solid @color2;
+		border-top:0;
+	}
+    &::after {
+    	.classWeilei;
+		top:@top + @width*3/20;
+	    left:@left + @width*2/5;
+	    width:@width/5;
+	    height:@width*2/5;
+	    z-index:4;
+	    background:@color2;
+	    border-radius:@width/5;
+	}
+	em{
+		width:@width;
+		height:@width;
+		position: absolute;
+		top:@top;
+		left:@left;
+		border-radius:@width;
+		background:@color1;
+		&::after {
+	    	.classWeilei;
+			width:@width/2;
+			height:@width*2/5;
+			top:@width/20;
+			left:@width/4;
+			background:@color1;
+			z-index:3;
+		}
+		&::before {
+	    	.classWeilei;
+			width:@width/10;
+			height:@width*3/20;
+			top:@width*7/10;
+			left:@width*9/20;
+			background:@color2;
+			z-index:3;
+		}
+	}
+}
+
+.iconLuyinb(@width:12px;@color1:#f60;@color2:#fff;@top:0;@left:0){
+	.classReset;
+	&::before {
+		.classWeilei;
+		top:@top + @width*1/20;
+	    left:@left + @width*4/15 ;
+	    z-index:2;
+	    width:@width*3/10;
+		height:@width*3/5;
+		border-radius:@width*2/5;
+		border:@width/10 solid @color1;
+		border-top:0;
+	}
+    &::after {
+    	.classWeilei;
+		top:@top + @width*3/20;
+	    left:@left + @width*2/5;
+	    width:@width/5;
+	    height:@width*2/5;
+	    z-index:4;
+	    background:@color1;
+	    border-radius:@width/5;
+	}
+	em{
+		width:@width;
+		height:@width;
+		top:@top;
+		left:@left;
+		border-radius:@width;
+		position:absolute;
+		&::after {
+	    	.classWeilei;
+			width:@width/2;
+			height:@width*2/5;
+			top:@width/20;
+			left:@width/4;
+			background:@color2;
+			z-index:3;
+		}
+		&::before {
+	    	.classWeilei;
+			width:@width/10;
+			height:@width*3/20;
+			top:@width*7/10;
+			left:@width*9/20;
+			background:@color1;
+			z-index:3;
+		}
+	}
+}
+
+.iconVideo (@width:12px;@color1:#f60;@top:0;@left:0){
+	.classReset;
+	&::before {
+		.classWeilei;
+	    left:@left + @width/20;
+	    top:@top;
+	    width:@width*7/10;
+	    height:@width/2;
+	    border-radius:@width/10;
+	    background:@color1;
+	}
+	&::after {
+		.classWeilei;
+	    left:@left + @width*3/4;
+	    top:@top;
+	    border-style:solid;
+	    border-width:@width/4 @width*3/10 @width/4 0;
+	    border-color:transparent;
+	    border-right-color:@color1;
+	}
+}
+
+.iconPower(@width:12px;@color1:#f60;@color2:#fff;@top:0;@left:0){
+	.classReset;
+	&::before {
+		.classWeilei;
+	    left:@left;
+	    top:@top;
+	    width:@width;
+	    height:@width;
+	    border:@width/10 solid @color1;
+	    border-radius:@width;
+	}
+	&::after {
+		.classWeilei;
+	    left:@left + @width/2 - @width/20;
+	    top:@top - @width/5;
+	    width:@width/10;
+	    height:@width/2;
+	    border-left:@width/10 solid @color2;
+	    border-right:@width/10 solid @color2;
+	    background:@color1;
+	    z-index:3;
+	}
+}
+
+.iconCamera(@width:12px;@color1:#f60;@color2:#fff;@top:0;@left:0){
+	.classReset;
+	&::before {
+		.classWeilei;
+	    left:@left;
+	    top:@top;
+	    width:@width;
+	    height:@width*3/4;
+	    background:@color1;
+	}
+	&::after {
+		.classWeilei;
+	    left:@left + @width/4;
+	    top:@top - @width/8;
+	    width:@width/2;
+	    height:@width/8;
+	    background:@color1;
+	}
+	em{
+		position:absolute;
+		left:@left + @width/4;
+	    top:@top + @width/8;
+	    width:@width/2;
+	    height:@width/2;
+	    background:@color2;
+	    border-radius:@width/2;
+	}
+}
+
+.iconRss(@width:12px;@color1:#f60;@top:0;@left:0){
+	.classReset;
+	&::before {
+		.classWeilei;
+		top:@top + @width*8/10;
+	    left:@left + @width*3/10;
+	    width:@width*5/10;
+	    height:@width*5/10;
+	    border-radius:@width*5/10;
+	    background:@color1;
+	}
+	&::after {
+		.classWeilei;
+		top:@top;
+	    left:@left + @width*3/10;
+	    width:@width*8/10;
+	    height:@width*8/10;
+	    border-width:@width*5/10 @width*5/10 0 0;
+	    border-style:double;
+	    border-color:@color1;
+	    background:transparent;
+    	border-radius:0 @width*25/10 0 0;
+	}
+}
+
+.iconProfile(@width:12px;@color1:#f60;@top:0;@left:0){
+	.classReset;
+	&::before {
+		.classWeilei;
+		top:@top + @width*9/16;
+	    left:@left + @width/4;
+	    width:@width;
+	    height:@width*5/16;
+	    border-radius:@width*5/16 @width*5/16 0 0;
+	    background:@color1;
+	}
+	&::after {
+		.classWeilei;
+		top:@top;
+	    left:@left + @width*9/16;
+	    width:@width*3/8;
+	    height:@width*9/16;
+	    border-radius:@width*5/16;
+	    background:@color1;
+	}
+}
+
+
+
+
+.icon-home-a{
+	.iconHomea(35px;#f60;#fff;30px;35px);
+}
+.icon-home-b{
+	.iconHomeb(25px;#f60;0;27px);
+}
+.icon-down{
+	.iconDown(30px;#f60;30px;35px);
+}
+.icon-close-a{
+	.iconClosea(35px;#f60;#fff;30px;35px);
+}
+.icon-close-b{
+	.iconCloseb(35px;#f60;30px;35px);
+}
+.icon-gotop{
+	.iconGotop(35px;#fff;#f60;35px;30px);
+}
+.icon-search{
+	.iconSearch(25px;#f60;35px;30px);
+}
+.icon-play{
+	.iconPlay(35px;#f60;#fff;35px;30px);
+}
+.icon-stop{
+	.iconStop(35px;#f60;#fff;35px;30px);
+}
+.icon-next{
+	.iconNext(35px;#f60;#fff;35px;30px);
+}
+.icon-prev{
+	.iconPrev(35px;#f60;#fff;35px;30px);
+}
+.icon-email{
+	.iconEmail(35px;#f60;40px;30px);
+}
+.icon-love{
+	.iconLove(30px;#f60;45px;30px);
+}
+.icon-add-a{
+	.iconAdda(35px;#f60;#fff;35px;30px);
+}
+.icon-add-b{
+	.iconAddb(35px;#f60;35px;30px);
+}
+.icon-remove-a{
+	.iconRemovea(35px;#f60;#fff;35px;30px);
+}
+.icon-remove-b{
+	.iconRemoveb(35px;#f60;35px;30px);
+}
+.icon-forward-a{
+	.iconForwarda(35px;#f60;#fff;35px;30px);
+}
+.icon-forward-b{
+	.iconForwardb(35px;#f60;35px;30px);
+}
+.icon-back-a{
+	.iconBacka(35px;#f60;#fff;35px;30px);
+}
+.icon-back-b{
+	.iconBackb(35px;#f60;35px;30px);
+}
+.icon-up-a{
+	.iconUpa(35px;#f60;#fff;35px;30px);
+}
+.icon-up-b{
+	.iconUpb(35px;#f60;35px;30px);
+}
+.icon-down-a{
+	.iconDowna(35px;#f60;#fff;35px;30px);
+}
+.icon-down-b{
+	.iconDownb(35px;#f60;35px;30px);
+}
+.icon-luyin-a{
+	.iconLuyina(35px;#f60;#fff;35px;30px);
+}
+.icon-luyin-b{
+	.iconLuyinb(35px;#f60;#fff;35px;30px);
+}
+.icon-video{
+	.iconVideo(30px;#f60;45px;35px);
+}
+.icon-power{
+	.iconPower(20px;#f60;#fff;40px;35px);
+}
+.icon-camera{
+	.iconCamera(35px;#f60;#fff;40px;35px);
+}
+.icon-rss{
+	.iconRss(20px;#f60;40px;35px);
+}
+.icon-Profile{
+	.iconProfile(30px;#f60;35px;30px);
+}

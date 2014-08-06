@@ -1,0 +1,269 @@
+<!doctype HTML>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+<title>CSS图标库 —— w3cmark 前端笔记网</title>
+<meta name="keywords" content="前端,CSS图标,CSS3教程,HTML5教程,JS教程,前端笔记,前端资讯,前端技术" />
+<meta name="description" content="W3Cmark,中国第一Web前端开发学习网站，汇聚了广大中国Web前端开发工程师，并为工程师及企业提供优质的前端资源和服务，是国内前端开发最贴心的综合服务平台。" />
+<link rel="stylesheet" type="text/css" href="css/cssicon.css">
+<style type="text/css">
+/* 全局样式 */
+*{ margin:0; padding:0;}
+body{background:#fff;padding:0px;margin:0px auto;font-size:15px;color:#454545;font-family:Helvetica,Microsoft YaHei,Microsoft JhengHei;}
+a{color:#454545;text-decoration:none;}
+ol,ul,li,dl,dd,dt{padding:0;margin:0;list-style:none;}
+form,p{padding:0;margin:0;}
+i,em{font-style:normal;}
+img,fieldset{border:0;vertical-align:middle}
+.fl,.mark{float:left}.fr,.subMark{float:right}
+.spanclass,.contentdiv{display:none}
+.mb{margin-bottom:10px;}
+
+.header{ background: #1f6692; border-bottom: 2px solid #ffa900; height: 45px; line-height: 45px;  position: fixed; top: 0; width: 100%; overflow: hidden; z-index: 100}
+.header a{color: #eee; display: inline-block; padding: 0 15px; vertical-align: top}
+.header a:hover,.header .cur{ background: #14547c}
+.header-top{ max-width: 1100px;overflow: hidden; margin: 0 auto}
+.header-logo{ font-size: 26px; color: #00cfff;font-style: italic; margin-right: 20px;}
+.header .header-logo:hover{ background: none}
+.header-logo i{ font-size: 28px; color: #ffa900;font-style: italic; }
+.header-logo .i1{color: #e33b79}
+.header-logo .i2{color: #9bbb1b}
+.search{padding:3px 0px 3px 5px;margin:10px 10px 0 0;float:right; display:inline-block;height:20px;width:180px; line-height:20px;border-radius:8px;background-position:160px 7px;background-repeat:no-repeat;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAYAAABy6+R8AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NDdFRTBEQ0NBMzE1MTFFMkEzOUU5MkY5M0JGNjQ4OUMiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NDdFRTBEQ0RBMzE1MTFFMkEzOUU5MkY5M0JGNjQ4OUMiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo0N0VFMERDQUEzMTUxMUUyQTM5RTkyRjkzQkY2NDg5QyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo0N0VFMERDQkEzMTUxMUUyQTM5RTkyRjkzQkY2NDg5QyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PneWbcsAAADaSURBVHjafFLBDYMwDEyiDsAIHYERYIN0A358ywS0E1Q8eXUFNmhHYARGyAb0HF1oakRPsuwYnzk7seu6GkHbth6uh5Xmixl2H8dxynLGCgmEBvHTHEOIt3RwIFQZ4Q27oMCK51nQU0nEiZIiAcV1+kBJE4pf8BXrokzHhGA4kNbRb7M61XkH5OcU46/lDyklNJA/6waOazXZbBoP+iVfxMDteXQV36FjQFyQ4PXM6Z6kuDH/EWC1SLTZi7hSYpEVLryrJiduJLUQIYY0uHoxYUc6AolxKR8BBgDZQF3I3cJTbAAAAABJRU5ErkJggg==);background-color:#eee;position:relative;}
+.search input{border:0;margin:0;padding:0;background:none;outline:none}
+.search-submit{display:inline-block;width:35px;height:26px;border:0;background:none;position:absolute;right:0;top:0;cursor:pointer;outline:none}
+
+::-webkit-scrollbar{width: 4px;height: 4px;}
+::-webkit-scrollbar-track-piece {background-color: transparent;}
+::-webkit-scrollbar-thumb{background-color: #999;-webkit-border-radius: 3px;}
+::-webkit-scrollbar-thumb:hover{background-color: #9f9f9f;}
+
+.main {max-width:1020px;margin:0 auto 10px;overflow: hidden;}
+.pageheader{padding: 20px 10px 35px;position: relative;border-bottom: 1px solid #eee;margin-bottom:15px;overflow:hidden;margin-top:47px;background:#eee}
+.pageheader h1{font-size:48px;padding: 0;margin: 0;color:#ff4400;float:left;}
+.pageheader-text{overflow:hidden;width:850px;margin:0 auto;padding-left:150px;}
+.pageheader .pageheader-text-span{display:inline-block;padding:5px 0 0 15px;font-size:14px;font-weight:normal;float:left;}
+.pageheader .pageheader-text-span b{font-size:24px;}
+
+.icon-list{overflow:hidden;}
+.icon-list li{width:100px;float:left;display:inline;height:120px;border:1px solid #fff}
+.icon-list li:hover{border:1px solid #e5e5e5}
+.icon-tit{display:block;color:#999;line-height:24px;font-size:14px;text-align:center;}
+
+.footer{ background: #414141; color: #a3a3a3; padding: 30px 15px 10px; line-height: 24px; text-align: center;}
+.footer-le,.footer-cen,.footer-ri{ width: 290px; display: inline-block; vertical-align: top;}
+.footer span,.footer a{ height: 24px; line-height: 24px; display: block; margin: 10px 0; color: #a3a3a3}
+.footer .span1{ color: #fff; font-size: 16px}
+.footer-ri{ margin: 10px; text-align: left; width: 360px}
+</style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="header-top">
+        <a class="header-logo" href="http://www.w3cmark.com/" title="前端笔记-w3cmark"><i class="i1">W</i><i class="i2">3</i><i>C</i>mark</a>
+            <a href="http://www.w3cmark.com/a/qianduanzixun/" title="前端资讯">前端资讯</a>
+            <a href="http://www.w3cmark.com/a/qianduanjishu/" title="前端技术">前端技术</a>
+            <a href="http://www.w3cmark.com/a/qianduanbug/" title="前端BUG">前端BUG</a>
+            <a href="http://www.w3cmark.com/a/qianduanzhaopin/" title="前端招聘">前端招聘</a>
+            <a href="http://www.w3cmark.com/a/qianduanmianshi/" title="前端面试">前端面试</a>
+            <a href="http://www.w3cmark.com/mark/" title="CSS3教程，前端导航" class="cur">导航</a>
+
+            <span class="search">
+              <form  name="formsearch" action="http://www.w3cmark.com/plus/search.php">
+                   <input type="hidden" name="kwtype" value="0" />
+                   <input name="q" type="text" class="search-keyword" id="search-keyword" placeholder="请输入关键词进行搜索"/>
+                  <button type="submit" class="search-submit"></button>
+                </form>
+            </span><!-- //search -->
+        </div>
+    </div>
+    <header class="pageheader">
+        <div class="pageheader-text">
+            <h1 class="pull-left">CSS图标库</h1>
+            <span class="pageheader-text-span"><b>53</b>icons<br/>
+                Powered by w3cmark</span>
+        </div>
+
+    </header>
+    <div class="main clearfix">
+        <ul class="icon-list">
+            <li>
+                <div class="icon-home-a"><em></em></div>
+                <span class="icon-tit">首页</span>
+            </li>
+            <li>
+                <div class="icon-home-b"></div>
+                <span class="icon-tit">首页</span>
+            </li>
+            <li>
+                <div class="icon-down"><em></em></div>
+                <span class="icon-tit">下载</span>
+            </li>
+            <li>
+                <div class="icon-close-a"><em></em></div>
+                <span class="icon-tit">关闭</span>
+            </li>
+            <li>
+                <div class="icon-close-b"></div>
+                <span class="icon-tit">关闭</span>
+            </li>
+            <li>
+                <div class="icon-gotop"><em></em></div>
+                <span class="icon-tit">返回顶部</span>
+            </li>
+            <li>
+                <div class="icon-search"></div>
+                <span class="icon-tit">搜索</span>
+            </li>
+            <li>
+                <div class="icon-play"></div>
+                <span class="icon-tit">播放</span>
+            </li>
+            <li>
+                <div class="icon-stop"><em></em></div>
+                <span class="icon-tit">暂停</span>
+            </li>
+            <li>
+                <div class="icon-next"><em></em></div>
+                <span class="icon-tit">下一个</span>
+            </li>
+            <li>
+                <div class="icon-prev"><em></em></div>
+                <span class="icon-tit">上一个</span>
+            </li>
+            <li>
+                <div class="icon-email"></div>
+                <span class="icon-tit">消息</span>
+            </li>
+            <li>
+                <div class="icon-love"></div>
+                <span class="icon-tit">心形</span>
+            </li>
+            <li>
+                <div class="icon-add-a"><em></em></div>
+                <span class="icon-tit">添加</span>
+            </li>
+            <li>
+                <div class="icon-add-b"></div>
+                <span class="icon-tit">添加</span>
+            </li>
+            <li>
+                <div class="icon-remove-a"></div>
+                <span class="icon-tit">移除</span>
+            </li>
+            <li>
+                <div class="icon-remove-b"></div>
+                <span class="icon-tit">移除</span>
+            </li>
+            <li>
+                <div class="icon-forward-a"><em></em></div>
+                <span class="icon-tit">前进</span>
+            </li>
+            <li>
+                <div class="icon-forward-b"></div>
+                <span class="icon-tit">前进</span>
+            </li>
+            <li>
+                <div class="icon-back-a"><em></em></div>
+                <span class="icon-tit">后退</span>
+            </li>
+            <li>
+                <div class="icon-back-b"></div>
+                <span class="icon-tit">后退</span>
+            </li>
+            <li>
+                <div class="icon-up-a"><em></em></div>
+                <span class="icon-tit">向上</span>
+            </li>
+            <li>
+                <div class="icon-up-b"></div>
+                <span class="icon-tit">向上</span>
+            </li>
+            <li>
+                <div class="icon-down-a"><em></em></div>
+                <span class="icon-tit">向下</span>
+            </li>
+            <li>
+                <div class="icon-down-b"></div>
+                <span class="icon-tit">向下</span>
+            </li>
+            <li>
+                <div class="icon-luyin-a"><em></em></div>
+                <span class="icon-tit">录音</span>
+            </li>
+            <li>
+                <div class="icon-luyin-b"><em></em></div>
+                <span class="icon-tit">录音</span>
+            </li>
+            <li>
+                <div class="icon-video"></div>
+                <span class="icon-tit">视频</span>
+            </li>
+            <li>
+                <div class="icon-power"></div>
+                <span class="icon-tit">电源</span>
+            </li>
+            <li>
+                <div class="icon-camera"><em></em></div>
+                <span class="icon-tit">相机</span>
+            </li>
+            <li>
+                <div class="icon-rss"></div>
+                <span class="icon-tit">RSS订阅</span>
+            </li>
+            <li>
+                <div class="icon-Profile"></div>
+                <span class="icon-tit">头像</span>
+            </li>
+            <li>
+                <div class="icon-power"></div>
+                <span class="icon-tit">电源</span>
+            </li>
+            <li>
+                <div class="icon-power"></div>
+                <span class="icon-tit">电源</span>
+            </li>
+            <li>
+                <div class="icon-power"></div>
+                <span class="icon-tit">电源</span>
+            </li>
+            <li>
+                <div class="icon-power"></div>
+                <span class="icon-tit">电源</span>
+            </li>
+            <li>
+                <div class="icon-power"></div>
+                <span class="icon-tit">电源</span>
+            </li>
+            <li>
+                <div class="icon-power"></div>
+                <span class="icon-tit">电源</span>
+            </li>
+            <li>
+                <div class="icon-power"></div>
+                <span class="icon-tit">电源</span>
+            </li>
+            <li>
+                <div class="icon-power"></div>
+                <span class="icon-tit">电源</span>
+            </li>
+            <li>
+                <div class="icon-power"></div>
+                <span class="icon-tit">电源</span>
+            </li>
+        </ul>
+<br/>
+<br/>
+<br/>
+
+    </div>
+
+<span class="spanclass">
+<script type="text/javascript">
+// var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+// document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fdfce3b3ee53b60a115ae550e35e8a015' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</span>
+</body>
+</html>
